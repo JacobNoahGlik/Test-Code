@@ -8,7 +8,7 @@ Test someone's code if they expect input to their stdin (C programming language)
     ```bash
     make
     ```
-3. Run the `bash` file
+2. Run the `bash` file
   ```bash
   ./run_test.sh <name_of_executable>
   ```
