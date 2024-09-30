@@ -1,0 +1,30 @@
+0,map,0,0
+0,store,7,255
+// should give an ERROR (0-15 is read-only)
+
+0,map,0,1
+0,store,7,255
+// should not give an error (0-15 is read-write)
+
+0,load,7,0
+// should return 225
+
+0,map,10,1
+// should give an ERROR (0-15 is ALREADY read-write)
+
+0,map,16,1
+0,map,32,1
+0,map,48,1
+0,store,60,200
+1,map,0,1
+1,map,16,1
+1,store,4,18
+1,store,20,20
+2,map,0,1
+3,map,0,1
+
+1,load,20,0
+// should return 20
+
+0,load,7,0
+// should return 255
