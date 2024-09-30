@@ -7,8 +7,8 @@ fi
 
 INSTRUCTION_FILE="test.x86"
 
-"$1" &
-PROGRAM_PID=$!
+# "$1" &
+# PROGRAM_PID=$!
 
 sleep 0.25
 echo -e "\n" >&2
