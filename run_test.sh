@@ -16,14 +16,18 @@ echo -e "\n" >&2
 while IFS= read -r line; do
     trimmed_line=$(echo "$line" | xargs)
 
-    if [[ -z "$trimmed_line" || "$trimmed_line" == //* ]]; then
-        continue
+    if [[ "$trimmed_line" == GradersNote:* ]]; then
+        echo -e "    $trimmed_line" >&2
     fi
 
-    # if ! kill -0 $PROGRAM_PID 2>/dev/null; then
-    #         echo "Program has exited unexpectedly (possibly a segfault). Stopping input." >&2
-    #         break
-    #     fi
+    if [[ -z "$trimmed_line" || "$trimmed_line" == //* ||  "$trimmed_line" == GradersNote:* ]]; then
+        continue
+    fi
+    if [[ "$trimmed_line" == SLEEP* ]]; then
+        echo -e "Test Completed\n\n\n" >&2
+        sleep 10
+        break
+    fi
 
     echo -e "\nInstruction? $trimmed_line" >&2
     sleep 0.1
@@ -33,5 +37,4 @@ while IFS= read -r line; do
 done < "$INSTRUCTION_FILE"
 } | "$1"
 
-
-wait
+wait $PROGRAM_PID
