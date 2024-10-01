@@ -11,7 +11,7 @@ make
 2. Run the `bash` file
 
 ```bash
-./run_test.sh <name_of_executable>
+./run_test.sh ./<name_of_executable>
 ```
 
 ###### Note this assumes that you are on Linux; for Windows, you may need to add `bash ` before `run_test.sh`
