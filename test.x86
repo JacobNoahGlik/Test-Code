@@ -2,7 +2,6 @@
 0,store,7,255
 GradersNote: should give an ERROR (0-15 is read-only)
 
-
 0,map,0,1
 0,store,7,255
 GradersNote: should not give an error (0-15 is read-write)
