@@ -23,11 +23,11 @@ while IFS= read -r line; do
     if [[ -z "$trimmed_line" || "$trimmed_line" == //* ||  "$trimmed_line" == GradersNote:* ]]; then
         continue
     fi
-    if [[ "$trimmed_line" == SLEEP* ]]; then
-        echo -e "Test Completed\n\n\n" >&2
-        sleep 10
-        break
-    fi
+    # if [[ "$trimmed_line" == SLEEP* ]]; then
+    #     echo -e "Test Completed\n\n\n" >&2
+    #     sleep 10
+    #     break
+    # fi
 
     echo -e "\nInstruction? $trimmed_line" >&2
     sleep 0.1
