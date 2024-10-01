@@ -17,7 +17,7 @@ while IFS= read -r line; do
     trimmed_line=$(echo "$line" | xargs)
 
     if [[ "$trimmed_line" == GradersNote:* ]]; then
-        echo -e "    $trimmed_line" >&2
+        echo -e "   \033[31m $trimmed_line \033[0m" >&2
     fi
 
     if [[ -z "$trimmed_line" || "$trimmed_line" == //* ||  "$trimmed_line" == GradersNote:* ]]; then
